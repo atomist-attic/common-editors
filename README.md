@@ -1,4 +1,4 @@
-# common-editors
+# Atomist Common Editors
 
 Atomist common editors that can be imported and referenced from Rug
 Generators and Editors.
