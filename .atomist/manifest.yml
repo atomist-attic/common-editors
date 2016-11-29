@@ -1,0 +1,9 @@
+group: atomist-rugs
+artifact: common-editors
+version: "0.1.0"
+
+requires: "1.2.0-20161104135249"
+
+dependencies:
+
+extensions:

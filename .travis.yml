@@ -1,0 +1,32 @@
+language: java
+install: true
+script: bash travis-build.bash
+jdk:
+- oraclejdk8
+branches:
+  except:
+  - /\+travis\d+$/
+env:
+  global:
+  - ARTIFACTORY_USER=travis-mvn-deploy
+  - secure: iv4BfcPH4NxlPWspHkBDBA+Bu2ioAVQmtkHAF4jKSFY7+9p0iuUGst90N1E6D18goKqIo6RsnkohWoYLSjV1JnOgXsqyWmqzwcnhUfOgzReNEiglYDlbjvOTeXts+jNTRDy21x2wV/31ejsHJLTJW3TpHoYJTzB9+RQNblb/DbweGK0LsFFCU4mqkps4Fg/WmEReg/kiknbDLsADnkm7LRBgveOd2Oyfs0C6sDtdpph+hnDxO6nDWGQWy1o1LBMVk1TrQ755PTU1jreVJkyj1ROhXyTz/Zr1a61SrBICqB8RG0AdwJLfP4lqxxabM7XqvOVe80PI1WTybPD6cXKXJzOW3/CfK9OfR3FFm5eFzLbu2+vpEHf1NZ7WR8bo8TZbdNUbPmwi/YFimnbP8x5f0mDmeJyXwSRGPk+q6HRXF5VSlay52Pls6WauCz1IYY8Nk5iX07reBDD1fpTgYEUOHOY0bu0L9sxGWCUTzO5vcfv1k40uTbNTsZe66uZeVyHZKuI6lGkgIaU0ZHjoWUt7m1hjRtfALaq0D9io9GjHo6jW7b+OUytwFmNIPsJEDW7xwVz90Fv1XOHawrWW+wsmXlbbwFrD8y7ByTegjhPc30VO/X8Di7jFog2sKZEksRje7kIo8lD+ULZBht1M1Ubf2hQSQZfUFDfiujuqmD4gjEc=
+  - secure: If2s+tumRcheUav6yGsaYLdYqGjrojUhOW+AFqmKxv8WXIu+CUg2a/3QHOmWJkrkNDhYEX0nJ8xLVgTAWK3iC2S5OgUGBz3Rk9S22Frba9YZ1W9VBZRxYDvAsQFgfG0zLJ1qEhaH+Gt8/LTRfdCSaA0aWS0Y1cBGfxXWPqwjkYyFZvTouqFvVfxvqKQi1khUNoQIxFiK0epIXQtdWRucDkdV2amAhizQLUzSFjQxIs5uY6QVt2seGAvT71sfB9q59ru4CNYux0jLQm0LK0W2DvOVPSSpdkcOL/NzTWL+kSCYZAsJ67ubo/KnvlWCLdvMYoYkLeu7Rmtca1k6savxUHruyycenotctXKKpNGid9D1NZqRYVMSutyl1QHMPRnNRxfDabCFKZkJ3OhdGaTyHRqV5jkaH7VYNS9hZJYD0xI9MMOW0995NrUB9SckB074Xn7MhB/2chb/657OfDjcSP3QEoVKNZsAy1yjjnwWdjv3IMQbE08YWDIDy9uswEMY+r+rW7RzuKRRuAkHUePGtV+lLTzfcb0aMDALj4kWe+j1GnrHxCaWFXQbfzoVUckFsRrtwlb0ziQHZXh+63YdSEP5YNA/iqnYROw8qsoQ/+lethKAbTXq0YA6piApcr9ibN5smssXfr0bx6ssLClSFmrcpTV33AmxJrfCN9uVqkg=
+notifications:
+  email: false
+  webhooks:
+    on_success: always
+    on_failure: always
+    on_start: always
+    urls:
+    - https://webhook.atomist.com/travis
+cache:
+  directories:
+  - $HOME/.atomist
+deploy:
+  provider: releases
+  api_key:
+    secure: XPvyQ9Qe5wfMRX1xnyCHo4vXaCgOuLchcMijMAoh13YahYImZn5ib+cr1S2Ymd+Eq8Vx9I9fSVlxGCGEGCCyNhFyftUiaE/d4Eh4/+tgkVfO7BCdQc/GtuJkc95m4zqV2aIbtF8cQSEQ7XRgoQkChbTS0eg7HBtraptF9JW35fd9g6wDk6J5zLjLsNi+aWWJzXY3LwYccZ0uO5yZLaU4UuvW2kj0XG39Zo5hWnPUlGEH/W+xFSqBw8v2CiixBnEdPjQj5vbEJsO+XM04XqJOwLkERhuA2cICFbvSbTj2r1ig94DH5moRChWhVqt3OJLTbW25X66EpTejW//s1OCsKm1ha15X6un97LyvB04klpEI4yJIxJ52Z5++SKjWvd/sncuV817Pcol7uGYbUjcwZ8HI/x5vYYUcV/FO0yRHno2q6zHfJ22YGr3ttaX9Mn8rIJ+5MStdvdehXaBNKXilVnW4AFTekNxhtuA7/G9pRJA+OiQpNYwPYIfRBfFdJJpb7Ttpn3/OjFQdJRPdUrMMspq0kFyCAmTazA62G2FPpgptpI6xP1TIStWNPU8BzvmiMAgrjWPa2RDtZb4GzlMBdhrRmr7WnAyyln79LTWJYViBSa/+rrY2C9npZOeMEzDm4sRKO5pJhAOXdacJVDSZ7IfULc0Fct3dyd6FdofD6fA=
+  skip_cleanup: true
+  on:
+    tags: true
+    condition: "$TRAVIS_TAG =~ ^[0-9]+\\.[0-9]+\\.[0-9]+$"
