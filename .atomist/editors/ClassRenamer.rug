@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 @tag "java"
-@description "Rename a Java class, replacing one literal pattern with another"
+@description "renames a Java class, replacing one literal pattern with another"
 editor ClassRenamer
 
 @description "Name of Java class to rename"

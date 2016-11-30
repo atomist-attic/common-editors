@@ -16,7 +16,7 @@
 @tag "scala"
 @tag "maven"
 @tag "git"
-@description "Add gitignore suitable for Scala Maven projects to project"
+@description "adds a .gitignore suitable for Scala Maven projects"
 editor AddScalaMavenGitIgnore
 
 let sampleGitIgnore = "gitignore.vm"

@@ -16,7 +16,7 @@
 @tag "java"
 @tag "apache"
 @tag "maven"
-@description "Update a Maven pom to new group, artifact, version and description"
+@description "updates a Maven pom to a new group, artifact, version and description"
 editor PomParameterizer
 
 @description "Artifact Id: Used by Maven"

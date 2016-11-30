@@ -15,7 +15,7 @@
  */
 @tag "readme"
 @tag "documentation"
-@description "Add project specific README"
+@description "adds a project specific README"
 editor AddReadme
 
 @description "Name of the new project."

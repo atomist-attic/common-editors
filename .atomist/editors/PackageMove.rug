@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 @tag "java"
-@description "Rename a Java package"
+@description "renames a Java package"
 editor PackageMove
 
 param old_package: @java_package

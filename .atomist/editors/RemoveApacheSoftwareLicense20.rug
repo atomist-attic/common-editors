@@ -16,7 +16,7 @@
 @tag "license"
 @tag "apache"
 @tag "documentation"
-@description "Remove an Apache Software License version 2.0 file from the project"
+@description "removes an Apache Software License version 2.0 file if present"
 editor RemoveApacheSoftwareLicense20
 
 let licenseFilename = "LICENSE"

@@ -16,7 +16,7 @@
 @tag "license"
 @tag "apache"
 @tag "documentation"
-@description "Add Apache Software License version 2.0 file to project"
+@description "adds the Apache Software License version 2.0 file"
 editor AddApacheSoftwareLicense20
 
 let license = "ApacheSoftwareLicenseV20.vm"
