@@ -21,8 +21,10 @@ let newDescription = "Boy Wizard"
 
 given
   ArchiveRoot
+
 when
   AddReadme projectName = newName,  description = newDescription
+
 then
   fileExists readme
 	and fileContains readme newName
@@ -32,8 +34,10 @@ scenario AddReadme should reject invalid value name parameter
 
 given
   ArchiveRoot
+
 when
   AddReadme projectName = "Harry Potter", description = "Boy Wizard"
+
 then
   InvalidParameters
 
@@ -41,7 +45,9 @@ scenario AddReadme should reject missing parameter
 
 given
   ArchiveRoot
+
 when
   AddReadme description = "Boy Wizard"
+  
 then
   MissingParameters

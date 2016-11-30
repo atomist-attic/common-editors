@@ -23,5 +23,5 @@ let sampleGitIgnore = "gitignore.vm"
 
 let gitIgnoreFilename = ".gitignore"
 
-with project p
+with project
   do merge sampleGitIgnore to gitIgnoreFilename

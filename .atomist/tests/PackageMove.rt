@@ -21,6 +21,7 @@ let newpack = "com.foo.bar"
 given
   ArchiveRoot
 
+when
   PackageMove old_package= oldpack, new_package = newpack
 
 then

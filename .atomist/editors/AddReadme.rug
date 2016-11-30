@@ -30,5 +30,5 @@ param description: .*
 let readme = "readme.vm"
 let readmeFilename = "README.md"
 
-with project p
+with project
   do merge readme to readmeFilename

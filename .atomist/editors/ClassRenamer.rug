@@ -31,5 +31,5 @@ with java.class c when { c.name().contains(old_class) }
 # Pick up and change all remaining references
 # TODO shouldn't really need to do this: Calls to Rug methods should do it all
 # It's inefficient and fragile (what if the class name is a common string)
-with project p
+with project
   do replace old_class new_class
