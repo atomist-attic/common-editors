@@ -12,7 +12,7 @@ branch: n/a
 sha: n/a
 
 # parameter values
-repo_slug: atomist-rugs/cli-build-test
+repo_slug: atomist-rugs/common-editors
 travis_token: n********************Q
 github_token: d**************************************e
 org: .org
