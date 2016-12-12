@@ -25,7 +25,7 @@ param projectName: @project_name
 @maxLength 90
 @description "Description of the new project"
 @displayName "description"
-param description: .*
+param description: ^.*$
 
 let readme = "readme.vm"
 let readmeFilename = "README.md"
