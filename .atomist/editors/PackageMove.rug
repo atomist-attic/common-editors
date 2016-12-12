@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Atomist
+ * Copyright © 2016 Atomist, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@tag "java"
+
 @description "renames a Java package"
+@tag "java"
 editor PackageMove
 
+@displayName "Current Package Name"
+@description "Name of Java package to rename"
+@validInput "A valid Java package name, which consists of period-separated identifiers which have only alphanumeric characters, $ and _ and do not start with a number"
 param old_package: @java_package
+
+@displayName "New Package Name"
+@description "New name for the Java package"
+@validInput "A valid Java package name, which consists of period-separated identifiers which have only alphanumeric characters, $ and _ and do not start with a number"
 param new_package: @java_package
 
 with java.source when pkg = old_package

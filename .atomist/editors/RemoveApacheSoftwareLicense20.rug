@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Atomist
+ * Copyright © 2016 Atomist, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@tag "license"
-@tag "apache"
-@tag "documentation"
+
 @description "removes an Apache Software License version 2.0 file if present"
+@tag "apache"
+@tag "license"
+@tag "documentation"
 editor RemoveApacheSoftwareLicense20
 
 let licenseFilename = "LICENSE"
 
-with project
+with project when fileContains licenseFilename "Apache License" and fileContains licenseFilename "Version 2.0"
   do deleteFile licenseFilename

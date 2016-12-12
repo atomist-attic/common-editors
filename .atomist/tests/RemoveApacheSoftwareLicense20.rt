@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2016 the original author or authors.
+ * Copyright © 2016 Atomist, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- scenario RemoveApacheSoftwareLicense20 should remove a LICENSE file
 
- given
-   ArchiveRoot
+scenario RemoveApacheSoftwareLicense20 should remove Apache license
 
- when
-   RemoveApacheSoftwareLicense20
+given
+  ArchiveRoot
 
- then
-   { !result.fileExists("LICENSE") }
+when
+  RemoveApacheSoftwareLicense20
+
+then
+  { !result.fileExists("LICENSE") }
+
+scenario RemoveApacheSoftwareLicense20 should not remove other license
+
+given
+  LICENSE = "Not the license you are looking for"
+
+when
+  RemoveApacheSoftwareLicense20
+
+then
+  NoChange

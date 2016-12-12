@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2016 the original author or authors.
+ * Copyright © 2016 Atomist, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 scenario AddScalaMavenGitIgnore should add a new .gitignore file according to a provided template
 
 given
@@ -23,7 +24,7 @@ when
 
 then
   fileExists ".gitignore"
-  and fileContains ".gitignore" "# Created by Atomist"
+    and fileContains ".gitignore" "# Created by Atomist"
 
 scenario AddScalaMavenGitIgnore should overwrite an existing .gitignore file according to a provided template
 
@@ -35,4 +36,4 @@ when
 
 then
   fileExists ".gitignore"
-  and fileContains ".gitignore" "# Created by Atomist"
+    and fileContains ".gitignore" "# Created by Atomist"

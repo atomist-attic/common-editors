@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2016 the original author or authors.
+ * Copyright © 2016 Atomist, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 scenario AddReadme should add README.md
 
 let readme = "README.md"
@@ -23,7 +24,7 @@ given
   ArchiveRoot
 
 when
-  AddReadme projectName = newName,  description = newDescription
+  AddReadme project_name = newName, description = newDescription
 
 then
   fileExists readme
@@ -36,7 +37,7 @@ given
   ArchiveRoot
 
 when
-  AddReadme projectName = "Harry Potter", description = "Boy Wizard"
+  AddReadme project_name = "Harry Potter", description = "Boy Wizard"
 
 then
   InvalidParameters
@@ -48,6 +49,6 @@ given
 
 when
   AddReadme description = "Boy Wizard"
-  
+
 then
   MissingParameters
