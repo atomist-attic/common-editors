@@ -275,7 +275,7 @@ dependencies are available locally by running `npm install`.
 
 [cli]: https://github.com/atomist/rug-cli
 
-```sh
+```
 $ ( cd .atomist && npm install )
 $ rug test
 $ rug install
@@ -287,7 +287,7 @@ appropriate [semantic version][semver] for release.  For example:
 
 [semver]: http://semver.org
 
-```sh
+```
 $ git tag -a 1.2.3
 ```
 
