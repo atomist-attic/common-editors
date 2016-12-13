@@ -264,7 +264,7 @@ at [atomist-community.slack.com](https://join.atomist.com).
 
 If you find a problem, please create an [issue][].
 
-[issue]: https://github.com/atomist-rugs/travis-editors/issues
+[issue]: https://github.com/atomist-rugs/common-editors/issues
 
 ## Development
 
