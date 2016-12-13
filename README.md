@@ -269,14 +269,11 @@ If you find a problem, please create an [issue][].
 ## Development
 
 You can build, test, and install the project locally with
-the [Rug CLI][cli].  Before running the Rug CLI and after any changes
-to the `.atomist/package.json` file, you should ensure all of the
-dependencies are available locally by running `npm install`.
+the [Rug CLI][cli].
 
 [cli]: https://github.com/atomist/rug-cli
 
 ```
-$ ( cd .atomist && npm install )
 $ rug test
 $ rug install
 ```
