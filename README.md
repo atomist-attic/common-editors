@@ -285,6 +285,8 @@ To create a new release of the project, simply push a tag of the form
 `M.N.P` where `M`, `N`, and `P` are integers that form the next
 appropriate [semantic version][semver] for release.  For example:
 
+[semver]: http://semver.org
+
 ```sh
 $ git tag -a 1.2.3
 ```
