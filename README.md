@@ -202,9 +202,9 @@ To run this editor, you must supply the following parameters.
     If a value is not provided, the value of the `project_name`
     parameter is used.
 *   `group_id`: Maven group ID, e.g., "com.pany.project".
-*   `project_name`: A valid GitHub repository name.  It must be 21
-    characters or less to avoid truncating name when the its Slack
-    channel is created.
+*   `name`: A valid GitHub repository name.  It must be 21 characters
+    or less to avoid truncating name when the its Slack channel is
+    created.
 *   `version`: [Semantic version][semver] of the project.  Default
     value is "0.1.0".
 
