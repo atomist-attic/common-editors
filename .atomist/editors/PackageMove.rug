@@ -28,5 +28,5 @@ param old_package: @java_package
 @validInput "A valid Java package name, which consists of period-separated identifiers which have only alphanumeric characters, $ and _ and do not start with a number"
 param new_package: @java_package
 
-with java.source when pkg = old_package
+with JavaSource when pkg = old_package
 	do movePackage to new_package

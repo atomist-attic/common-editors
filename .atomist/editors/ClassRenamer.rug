@@ -28,11 +28,11 @@ param old_class: @java_class
 @validInput "A valid Java class name, which contains only alphanumeric characters, $ and _ and does not start with a number"
 param new_class: @java_class
 
-with java.class c when { c.name().contains(old_class) }
+with JavaType c when { c.name().contains(old_class) }
   do renameByReplace old_class new_class
 
 # Pick up and change all remaining references
 # TODO shouldn't really need to do this: Calls to Rug methods should do it all
 # It's inefficient and fragile (what if the class name is a common string)
-with project
+with Project
   do replace old_class new_class
