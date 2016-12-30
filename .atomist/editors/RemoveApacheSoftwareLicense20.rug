@@ -22,5 +22,5 @@ editor RemoveApacheSoftwareLicense20
 
 let licenseFilename = "LICENSE"
 
-with project when fileContains licenseFilename "Apache License" and fileContains licenseFilename "Version 2.0"
+with Project when fileContains licenseFilename "Apache License" and fileContains licenseFilename "Version 2.0"
   do deleteFile licenseFilename

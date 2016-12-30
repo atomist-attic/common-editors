@@ -23,5 +23,5 @@ editor AddScalaMavenGitIgnore
 let sampleGitIgnore = "gitignore.vm"
 let gitIgnoreFilename = ".gitignore"
 
-with project
+with Project
   do merge sampleGitIgnore to gitIgnoreFilename
