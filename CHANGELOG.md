@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/atomist-rugs/common-editors/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/atomist-rugs/common-editors/compare/0.5.1...HEAD
+
+## [0.5.1] - 2017-01-05
+
+### Changed
+
+-   Upgraded to rug 0.8.0
+
+### Fixed
+
+-   Inconsistent project name restrictions: https://github.com/atomist-rugs/common-editors/issues/5
 
 ## [0.3.0] - 2016-12-14
 

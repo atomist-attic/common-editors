@@ -20,14 +20,13 @@
 editor AddReadme
 
 @displayName "Project Name"
-@description "Name of the new project"
-@validInput "A valid GitHub project name less than 50 characters and using only letters, digits, hyphens"
+@description "Name of the project"
+@validInput "A valid GitHub project name using only letters, digits, hyphens"
 @minLength 1
-@maxLength 50
 param project_name: @project_name
 
 @displayName "Project Description"
-@description "One-sentence description of the new project"
+@description "One-sentence description of the project"
 @validInput "A string 1-90 characters long"
 @minLength 1
 @maxLength 90

@@ -33,9 +33,8 @@ param artifact_id: @artifact_id
 param group_id: @group_id
 
 @description "Name of the project"
-@validInput "A valid GitHub repo name containing only alphanumeric, ., -, and _ characters and 21 characters or less to avoid Slack truncating the name when creating a channel for the repo"
+@validInput "Any valid Maven project name as per: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html"
 @minLength 1
-@maxLength 21
 param name: @project_name
 
 @displayName "Version"
