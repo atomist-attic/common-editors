@@ -11,13 +11,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.5.1] - 2017-01-05
 
+[0.5.1]: https://github.com/atomist-rugs/common-editors/compare/0.5.0...0.5.1
+
+No change release.
+
+## [0.5.0] - 2017-01-05
+
+[0.5.0]: https://github.com/atomist-rugs/common-editors/compare/0.3.0...0.5.0
+
 ### Changed
 
 -   Upgraded to rug 0.8.0
 
 ### Fixed
 
--   Inconsistent project name restrictions: https://github.com/atomist-rugs/common-editors/issues/5
+-   Inconsistent project name restrictions [#5][issue5]
+
+[issue5]: https://github.com/atomist-rugs/common-editors/issues/5
 
 ## [0.3.0] - 2016-12-14
 
@@ -49,7 +59,7 @@ Conformity to convention release
 
 ## [0.1.0] - 2016-12-02
 
-[0.1.0]: https://github.com/atomist-rugs/common-editors/compare/0b359cf...0.1.0
+[0.1.0]: https://github.com/atomist-rugs/common-editors/tree/0.1.0
 
 Initial release
 
