@@ -40,6 +40,44 @@ This will add a file named `LICENSE` to the top-level directory of the
 project.  If you are happy with the change, commit the changes made by
 the Editor and push the commit to GitHub.
 
+### AddChangeLog
+
+The AddChangeLog Editor adds a [change log][changelog] file named
+`CHANGELOG.md` to the top-level directory in a project.
+
+[changelog]: http://keepachangelog.com/
+
+#### Prerequisites
+
+Before running this Editor, you must have the following prerequisites
+satisfied.
+
+*   A GitHub repository
+
+#### Parameters
+
+To run this editor, you must supply the following parameters.
+
+*   `repo_slug`: The GitHub repository "slug" of the form
+    "repo-owner/repo-name" of the repository to which you are adding
+    the change log.
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:travis-editors:AddChangeLog \
+    repo_slug=myorg/myrepo
+```
+
+This will add the `CHANGELOG.md` to the top-level directory of the
+project.  The change log will have initial formatting from which you
+can begin to keep a log of important changes to your code.  If you are
+happy with the change, commit the changes made by the Editor and push
+the commit to GitHub.
+
 ### AddReadme
 
 The AddReadme Editor adds a GitHub-like `README.md` file to the
@@ -255,6 +293,64 @@ This will remove a file named `LICENSE` at the top-level directory of
 the project if it appears to contain the Apache Software License
 Version 2.0.  If you are happy with the change, commit the changes
 made by the Editor and push the commit to GitHub.
+
+### RemoveChangeLog
+
+The RemoveChangeLog Editor removes the file named `CHANGELOG.md` from
+the project if it exists.
+
+#### Prerequisites
+
+Before running this Editor, you must have the following prerequisites
+satisfied.
+
+*   A repository with a file named `CHANGELOG.md` at the top-level
+    directory of the repository
+
+#### Parameters
+
+This Editor has no parameters.
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:common-editors:RemoveChangeLog
+```
+
+This will remove a file named `CHANGELOG.md` at the top-level
+directory of the project if it exists.
+
+### RemoveCodeOfConduct
+
+The RemoveCodeOfConduct Editor removes the file named
+`CODE_OF_CONDUCT.md` from the project if it exists.
+
+#### Prerequisites
+
+Before running this Editor, you must have the following prerequisites
+satisfied.
+
+*   A repository with a file named `CODE_OF_CONDUCT.md` at the
+    top-level directory of the repository
+
+#### Parameters
+
+This Editor has no parameters.
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:common-editors:RemoveCodeOfConduct
+```
+
+This will remove a file named `CODE_OF_CONDUCT.md` at the top-level
+directory of the project if it exists.
 
 ## Support
 

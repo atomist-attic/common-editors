@@ -7,7 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/atomist-rugs/common-editors/compare/0.5.1...HEAD
+[Unreleased]: https://github.com/atomist-rugs/common-editors/compare/0.6.0...HEAD
+
+## [0.6.0] - 2017-01-05
+
+[0.6.0]: https://github.com/atomist-rugs/common-editors/compare/0.5.1...0.6.0
+
+Change log release
+
+### Added
+
+-   AddChangeLog Editor
+
+-   RemoveChangeLog Editor
+
+-   RemoveCodeOfConduct Editor
 
 ## [0.5.1] - 2017-01-05
 
