@@ -37,3 +37,15 @@ when
 then
   fileExists ".gitignore"
     and fileContains ".gitignore" "# Created by Atomist"
+
+scenario AddScalaMavenGitIgnore should add a new .gitignore to a subdirectory
+
+given
+  dummyFile = "dummyFileContents"
+
+when
+  AddScalaMavenGitIgnore target_dir = "other"
+
+then
+  fileExists "other/.gitignore"
+    and fileContains "other/.gitignore" "# Created by Atomist"

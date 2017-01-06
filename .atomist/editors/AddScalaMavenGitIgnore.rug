@@ -20,8 +20,25 @@
 @tag "git"
 editor AddScalaMavenGitIgnore
 
+@displayName "Target Directory"
+@description "The path of the directory in to which to place the .gitignore"
+@validInput "A unix style directory path, relative to the project root, in which to create the .gitignore file"
+@default "/"
+@minLength 0
+@maxLength 255
+param target_dir: ^[^\\0]+$
+
 let sampleGitIgnore = "gitignore.vm"
 let gitIgnoreFilename = ".gitignore"
-
+let processedTarget = {
+   var res = target_dir;
+   if(!res.startsWith("/")){
+     res = "/" + res
+   }
+   if(!res.endsWith("/")){
+     res += "/"
+   }
+   return res
+}
 with Project
-  do merge sampleGitIgnore to gitIgnoreFilename
+  do merge sampleGitIgnore to { processedTarget + gitIgnoreFilename }

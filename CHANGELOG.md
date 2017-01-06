@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [Unreleased]: https://github.com/atomist-rugs/common-editors/compare/0.6.0...HEAD
 
+### Added
+
+-  AddScalaMavenGitIgnore now accepts target_dir parameter.
+   Resolves https://github.com/atomist-rugs/common-editors/issues/7
+
 ## [0.6.0] - 2017-01-05
 
 [0.6.0]: https://github.com/atomist-rugs/common-editors/compare/0.5.1...0.6.0
