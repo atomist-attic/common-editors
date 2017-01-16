@@ -245,6 +245,7 @@ To run this editor, you must supply the following parameters.
     created.
 *   `version`: [Semantic version][semver] of the project.  Default
     value is "0.1.0".
+*   `description`: description. 
 
 #### Running
 
@@ -253,14 +254,13 @@ Run it as follows:
 ```
 $ cd to/your/repo
 $ rug edit atomist-rugs:travis-editors:PomParameterizer \
-    old_package=com.pany.FooBar \
-    new_package=com.pany.MoreDescriptiveName
+    artifact_id=hooray \
+    group_id=com.pany \
+    description="Hooray for company" \
+    name=hooray
 ```
 
-This will change all occurrences of "com.pany.FooBar" package with
-"com.pany.MoreDescriptiveName" throughout the code base, moving files
-as appropriate.  If you are happy with the change, commit the changes
-made by the Editor and push the commit to GitHub.
+This will update all these things in the Pom.
 
 ### RemoveApacheSoftwareLicense20
 
