@@ -168,6 +168,7 @@ executor:
 
 ---
 kind: "operation"
+<<<<<<< HEAD
 client: "rug-cli 0.22.0"
 editor:
   name: "atomist-rugs.rug-editors.AddRugEditor"
@@ -226,6 +227,8 @@ editor:
 
 ---
 kind: "operation"
+=======
+>>>>>>> afcf6be... convert to TS
 client: "rug-cli 0.25.0-SNAPSHOT"
 editor:
   name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
@@ -237,5 +240,9 @@ editor:
     branch: "1e67c1d722094538f928b78351a6629b997c18db"
     sha: "1e67c1d"
   parameters:
+<<<<<<< HEAD
     - "rug_name": "AddChangeLog"
+=======
+    - "rug_name": "ChangeDependencyVersion"
+>>>>>>> afcf6be... convert to TS
 
