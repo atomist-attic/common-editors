@@ -1,0 +1,98 @@
+/*
+ * Copyright © 2017 Atomist, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@description "adds a Rug Extension Language backed by ANTLR to a Scala project"
+@tag "rug"
+@tag "maven"
+@tag "antlr"
+editor AddRugExtensionLanguageBackedByANTLR
+
+
+@displayName "New Package Name"
+@description "Name for the Scala package holding the new extension language class"
+@validInput "A valid Scala package name, which consists of period-separated identifiers which have only alphanumeric characters, $ and _ and do not start with a number"
+param package_name: @java_package
+
+@displayName "Extension Language Class Name"
+@description "Name of the new extension language class"
+@validInput "A valid Scala class name"
+param class_name: @java_class
+
+@displayName "File extension for that language"
+@description "The most common extension used by files for that language"
+@validInput "A file extension"
+param file_extension: @any
+
+@displayName "Grammar name"
+@description "The name of the ANTLR grammar file"
+@validInput "A valid filename"
+param grammar_name: @any
+
+@displayName "Grammar top-level production"
+@description "The name of the entry production for that grammar"
+@validInput "A valid name found in that grammar"
+param grammar_production: @any
+
+@displayName "Extension Language Description"
+@description "short descriptive text describing this new extension language"
+@minLength 1
+@validInput "free text"
+@optional
+@default "Extension Language"
+param description: @any
+
+
+let grammar_file = "EmptyAntlrGrammar.g4.mustache"
+let extension_class = "ExtensionLanguageClass.scala.mustache"
+let test_usage_class = "ExtensionLanguageUsageTest.scala.mustache"
+let unit_test_class = "ExtensionLanguageTest.scala.mustache"
+let load_source_editor = "ExtensionLanguageLoadSource.ts.mustache"
+
+let extension_class_path = {
+    var res = "src/main/scala/" + package_name.replace(/\./g, '/');
+    res += "/" + class_name + ".scala";
+    return res
+}
+
+let grammar_path = {
+    return "src/main/resources/grammar/antlr/" + grammar_name + ".g4"
+}
+
+let extension_test_usage_path = {
+    var res = "src/test/scala/" + package_name.replace(/\./g, '/');
+    res += "/" + class_name + "UsageTest.scala";
+    return res
+}
+
+let extension_unit_test_path = {
+    var res = "src/test/scala/" + package_name.replace(/\./g, '/');
+    res += "/" + class_name + "Test.scala";
+    return res
+}
+
+let load_source_editor_path = {
+    var res = "src/test/resources/" + package_name.replace(/\./g, '/');
+    res += "/LoadSource.ts";
+    return res
+}
+
+with Project p begin
+    do merge extension_class extension_class_path
+    do merge grammar_file grammar_path
+    do merge test_usage_class extension_test_usage_path
+    do merge unit_test_class extension_unit_test_path
+    do merge load_source_editor load_source_editor_path
+end

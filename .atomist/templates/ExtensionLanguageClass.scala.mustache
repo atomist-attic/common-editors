@@ -1,0 +1,17 @@
+package {{package_name}}
+
+import com.atomist.rug.kind.grammar.AntlrRawFileType
+import com.atomist.tree.content.text.grammar.antlr.{FromGrammarAstNodeCreationStrategy}
+import com.atomist.source.FileArtifact
+
+class {{class_name}}
+  extends AntlrRawFileType(
+    topLevelProduction = "{{grammar_production}}",
+    nodeCreationStrategy = FromGrammarAstNodeCreationStrategy,
+    grammars = "classpath:grammars/antlr/{{grammar_name}}.g4") {
+
+  override def description = "{{description}}"
+
+  override def isOfType(f: FileArtifact): Boolean =
+    f.name.endsWith("{{file_extension}}")
+}

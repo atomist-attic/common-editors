@@ -5,14 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.8.0]
 
-[Unreleased]: https://github.com/atomist-rugs/common-editors/compare/0.6.0...HEAD
+[0.8.0]: https://github.com/atomist-rugs/common-editors/compare/0.6.0...HEAD
 
 ### Added
 
 -  AddScalaMavenGitIgnore now accepts target_dir parameter.
    Resolves https://github.com/atomist-rugs/common-editors/issues/7
+
+-  AddRugExtensionLanguageBackedByANTLR Editor
 
 ## [0.6.0] - 2017-01-05
 

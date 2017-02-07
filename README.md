@@ -352,6 +352,59 @@ $ rug edit atomist-rugs:common-editors:RemoveCodeOfConduct
 This will remove a file named `CODE_OF_CONDUCT.md` at the top-level
 directory of the project if it exists.
 
+### AddRugExtensionLanguageBackedByANTLR
+
+The AddRugExtensionLanguageBackedByANTLR Editor adds a Rug extension language,
+formerly known as Type, to a Scala project.
+
+#### Prerequisites
+
+Before running this Editor, you must have the following prerequisites
+satisfied.
+
+*   A scala project
+
+#### Parameters
+
+To run this editor, you must supply the following parameters.
+
+* `package_name` the Scala project where to add the new extension language into.
+  If the package directory doesn't exist, it is created by the editor
+* `class_name` the name of the Scala class
+* `file_extension` the file extension this will support
+* `grammar_name` the name of the grammar, used to hold the ANTLR grammar
+* `grammar_production` the top-level production in your ANTLR grammar that will
+  act as the main entry point
+* `description` a short description of the nex extension language (optional)
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:common-editors:AddRugExtensionLanguageBackedByANTLR \
+    package_name=com.atomist.rug.extension\
+    class_name=ErlangExtensionLanguage\
+    file_extension=.erl\
+    grammar_name=Erlang\
+    grammar_production=forms
+```
+
+This will create a new Scala class in 
+`com.atomist.rug.extension.ErlangExtensionLanguage.scala` matching `*.erl` files
+with the `Erlang.g4` grammar starting with the `forms` production.
+
+You should now:
+
+* edit `src/main/resources/grammar/antlr/Erlang.g4` to start adding grammar rules
+* edit `src/test/scala/com/atomist/rug/extension/ErlangExtensionLanguageTest.scala` 
+  and `src/test/scala/com/atomist/rug/extension/ErlangExtensionLanguageUsageTest.scala`
+  to edit tests for that new extension language
+* open `src/test/resources/com/atomist/rug/extension/LoadSource.ts` to see a Rug
+  editor using your new extension in a path expression
+
+
 ## Support
 
 General support questions should be discussed in the `#support`
