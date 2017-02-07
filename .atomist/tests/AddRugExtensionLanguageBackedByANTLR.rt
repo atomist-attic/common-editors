@@ -18,7 +18,7 @@ scenario AddRugExtensionLanguageBackedByANTLR should add a new extension languag
 
 let package_dir = "src/main/scala/com/atomist/rug/extension"
 let test_package_dir = "src/test/scala/com/atomist/rug/extension"
-let grammar_resource_dir = "src/main/resources/grammar/antlr"
+let grammar_resource_dir = "src/main/resources/grammars/antlr"
 let test_resource_dir = "src/test/resources/com/atomist/rug/extension"
 let class_name = "ErlangExtensionLanguage"
 let extlang_path = { package_dir + "/" + class_name + ".scala" }
@@ -26,6 +26,7 @@ let test_path = { test_package_dir + "/" + class_name + "Test.scala" }
 let test_usage_path = { test_package_dir + "/" + class_name + "UsageTest.scala" }
 let grammar_path = { grammar_resource_dir + "/Erlang.g4" }
 let load_source_path = { test_resource_dir + "/LoadSource.ts" }
+let path_exp_jump_type = "ErlangExtensionLanguage"
 let package_name = "com.atomist.rug.extension"
 let file_extension = ".erl"
 let grammar_name = "Erlang" 
@@ -50,8 +51,8 @@ then
   and fileExists { test_package_dir + "/" + class_name + "Test.scala" }
   and fileContains test_path { "object "+class_name+"Test" }
   and fileContains test_path { "class "+class_name+"Test" }
-  and fileContains test_usage_path { "class "+class_name+"UsageTest extends AntlrRawFileTypeTest" }
+  and fileContains test_usage_path { "class "+class_name+"UsageTest extends AbstractTypeUnderFileTest" }
   and directoryExists grammar_resource_dir
   and fileContains grammar_path grammar_name
   and directoryExists test_resource_dir
-  and fileContains load_source_path { "//"+class_name+"()" }
+  and fileContains load_source_path { "//"+path_exp_jump_type+"()" }

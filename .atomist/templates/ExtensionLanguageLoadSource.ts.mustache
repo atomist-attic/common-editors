@@ -12,7 +12,7 @@ class Editors implements ProjectEditor {
     edit(project: Project) {
       let eng: PathExpressionEngine = project.context().pathExpressionEngine()
       let count = 0
-      eng.with<TreeNode>(project, "//{{class_name}}()", n => {
+      eng.with<TreeNode>(project, "//{{path_exp_jump_type}}()", n => {
         count++
       })
 

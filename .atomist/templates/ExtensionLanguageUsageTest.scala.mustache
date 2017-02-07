@@ -1,10 +1,9 @@
 package {{package_name}}
 
-import com.atomist.rug.kind.grammar.{AntlrRawFileType, AntlrRawFileTypeTest}
-import com.atomist.project.edit.{NoModificationNeeded, SuccessfulModification}
-import {{package_name}}.{{class_name}}
+import com.atomist.rug.kind.grammar.{AbstractTypeUnderFileTest, AntlrRawFileType}
+import com.atomist.project.edit.{NoModificationNeeded}
 
-class {{class_name}}UsageTest extends AntlrRawFileTypeTest {
+class {{class_name}}UsageTest extends AbstractTypeUnderFileTest {
   override protected def typeBeingTested: AntlrRawFileType = new {{class_name}}
 
   import {{class_name}}Test._
