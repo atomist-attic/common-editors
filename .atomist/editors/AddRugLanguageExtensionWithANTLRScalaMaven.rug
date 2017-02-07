@@ -18,7 +18,7 @@
 @tag "rug"
 @tag "maven"
 @tag "antlr"
-editor AddRugExtensionLanguageBackedByANTLR
+editor AddRugLanguageExtensionWithANTLRScalaMaven
 
 
 @displayName "New Package Name"
@@ -96,7 +96,7 @@ let path_exp_jump_type = {
     return class_name;
 }
 
-with Project p begin
+with Project begin
     do merge extension_class extension_class_path
     do merge grammar_file grammar_path
     do merge test_usage_class extension_test_usage_path
