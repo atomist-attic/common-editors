@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-scenario AddRugLanguageExtensionWithANTLRScalaMaven should add a new extension language to an existing Maven project
+scenario AddRugLanguageExtensionWithANTLRInScala should add a new extension language to an existing Maven project
 
 let package_dir = "src/main/scala/com/atomist/rug/extension"
 let test_package_dir = "src/test/scala/com/atomist/rug/extension"
@@ -36,7 +36,7 @@ given
   Empty
 
 when
-  AddRugLanguageExtensionWithANTLRScalaMaven
+  AddRugLanguageExtensionWithANTLRInScala
 
 then
   directoryExists package_dir

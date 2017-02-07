@@ -14,43 +14,31 @@
  * limitations under the License.
  */
 
-@description "updates a Maven pom to a new group, artifact, version and description"
-@tag "java"
-@tag "apache"
+@description "adds a project dependency to an existing Maven pom.xml"
 @tag "maven"
-editor PomParameterizer
+editor AddProjectDependencyToMavenPom
 
-@displayName "Artifact ID"
-@description "Artifact identifier used by Maven"
-@validInput "A valid Maven artifact ID, which starts with a lower-case letter and contains only alphanumeric, -, and _ characters"
-@defaultRef "project_name"
-@optional
-param artifact_id: @artifact_id
+precondition IsMavenProject
 
 @displayName "Group ID"
 @description "Group identifier used by Maven"
 @validInput "A valid Maven group ID, which starts with a letter, -, or _ and contains only alphanumeric, -, and _ characters and may having leading period separated identifiers starting with letters or underscores and containing only alphanumeric and _ characters."
-param group_id: @group_id
+param group_id: @any
 
-@description "Name of the project"
-@validInput "Any valid Maven project name as per: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html"
-@minLength 1
-param name: @project_name
+@displayName "Artifact ID"
+@description "Artifact identifier used by Maven"
+@validInput "A valid Maven artifact ID, which starts with a lower-case letter and contains only alphanumeric, -, and _ characters"
+param artifact_id: @any
 
 @displayName "Version"
 @description "Current version of the project"
 @validInput "A valid semantic version, http://semver.org"
-@default "0.1.0"
-@optional
-param version: @semantic_version
+param version: @any
 
-@description "Description of your new project"
-param description: ^.*$
+with Pom
+  do addOrReplaceDependencyOfVersion group_id artifact_id version
 
-with Pom when path = "pom.xml" begin
-  do setArtifactId  artifact_id	
-  do setGroupId group_id
-  do setVersion version
-  do setProjectName name
-  do setDescription description
-end
+
+predicate IsMavenProject
+  with Project
+    when fileExists "pom.xml"

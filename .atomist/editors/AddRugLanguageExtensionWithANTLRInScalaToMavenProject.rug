@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-@description "adds a Rug Extension Language backed by ANTLR to a Scala project"
+@description "adds a Rug Extension Language backed by ANTLR implemented in Scala to a Maven project"
 @tag "rug"
+@tag "scala"
 @tag "maven"
 @tag "antlr"
-editor AddRugLanguageExtensionWithANTLRScalaMaven
-
+editor AddRugLanguageExtensionWithANTLRInScalaToMavenProject
 
 @displayName "New Package Name"
 @description "Name for the Scala package holding the new extension language class"
@@ -54,52 +54,11 @@ param grammar_production: @any
 @default "Extension Language"
 param description: @any
 
+@displayName "Rug Version"
+@description "Version of Rug"
+@validInput "A valid semantic version, http://semver.org"
+param rug_version: @semantic_version
 
-let grammar_file = "EmptyAntlrGrammar.g4.mustache"
-let extension_class = "ExtensionLanguageClass.scala.mustache"
-let test_usage_class = "ExtensionLanguageUsageTest.scala.mustache"
-let unit_test_class = "ExtensionLanguageTest.scala.mustache"
-let load_source_editor = "ExtensionLanguageLoadSource.ts.mustache"
-
-let extension_class_path = {
-    var res = "src/main/scala/" + package_name.replace(/\./g, '/');
-    res += "/" + class_name + ".scala";
-    return res
-}
-
-let grammar_path = {
-    return "src/main/resources/grammars/antlr/" + grammar_name + ".g4"
-}
-
-let extension_test_usage_path = {
-    var res = "src/test/scala/" + package_name.replace(/\./g, '/');
-    res += "/" + class_name + "UsageTest.scala";
-    return res
-}
-
-let extension_unit_test_path = {
-    var res = "src/test/scala/" + package_name.replace(/\./g, '/');
-    res += "/" + class_name + "Test.scala";
-    return res
-}
-
-let load_source_editor_path = {
-    var res = "src/test/resources/" + package_name.replace(/\./g, '/');
-    res += "/LoadSource.ts";
-    return res
-}
-
-let path_exp_jump_type = {
-    if (class_name.endsWith('Type')) {
-        return class_name.replace('Type', '');
-    }
-    return class_name;
-}
-
-with Project begin
-    do merge extension_class extension_class_path
-    do merge grammar_file grammar_path
-    do merge test_usage_class extension_test_usage_path
-    do merge unit_test_class extension_unit_test_path
-    do merge load_source_editor load_source_editor_path
-end
+AddProjectDependencyToMavenPom group_id = "com.atomist", artifact_id = "rug", version = rug_version
+AddProjectDependencyToMavenPom group_id = "org.scalatest", artifact_id = "scalatest_2.11.8", version = "3.0.1"
+AddRugLanguageExtensionWithANTLRInScala

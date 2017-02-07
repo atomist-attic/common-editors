@@ -166,3 +166,33 @@ executor:
   parameters:
     - "version": "[0.8.0,1.0.0)"
 
+---
+kind: "operation"
+client: "rug-cli 0.22.0"
+editor:
+  name: "atomist-rugs.rug-editors.AddRugEditor"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.5.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-editors.git"
+    branch: "master"
+    sha: "75d5b21"
+  parameters:
+    - "editor_name": "AddProjectDependencytoMavenPom"
+
+---
+kind: "operation"
+client: "rug-cli 0.22.0"
+editor:
+  name: "atomist-rugs.rug-editors.AddRugEditor"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.5.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-editors.git"
+    branch: "master"
+    sha: "75d5b21"
+  parameters:
+    - "editor_name": "AddRugLanguageExtensionWithANTLRInScalaToMavenProject"
+
