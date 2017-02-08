@@ -17,7 +17,7 @@
 scenario AddRugLanguageExtensionWithANTLRInScalaToMavenProject should add a Rug language extension to a Maven Project
 
 let scalatest_group_id = "org.scalatest"
-let scalatest_artifact_id = "scalatest_2.11.8"
+let scalatest_artifact_id = "scalatest_2.11"
 let scalatest_version = "3.0.1"
 
 let rug_group_id = "com.atomist"
