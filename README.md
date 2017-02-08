@@ -398,11 +398,8 @@ with the `Erlang.g4` grammar starting with the `forms` production.
 You should now:
 
 * edit `src/main/resources/grammar/antlr/Erlang.g4` to start adding grammar rules
-* edit `src/test/scala/com/atomist/rug/extension/ErlangExtensionLanguageTest.scala` 
-  and `src/test/scala/com/atomist/rug/extension/ErlangExtensionLanguageUsageTest.scala`
+* edit `src/test/scala/com/atomist/rug/extension/ErlangExtensionLanguageTest.scala`
   to edit tests for that new extension language
-* open `src/test/resources/com/atomist/rug/extension/LoadSource.ts` to see a Rug
-  editor using your new extension in a path expression
 
 
 ## Support
