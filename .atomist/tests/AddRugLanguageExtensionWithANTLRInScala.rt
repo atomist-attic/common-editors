@@ -20,14 +20,16 @@ let package_dir = "src/main/scala/com/atomist/rug/extension"
 let test_package_dir = "src/test/scala/com/atomist/rug/extension"
 let grammar_resource_dir = "src/main/resources/grammars/antlr"
 let test_resource_dir = "src/test/resources/com/atomist/rug/extension"
+let typed_inf_path = "src/main/resources/META-INF/services/com.atomist.rug.spi.Typed"
+let package_name = "com.atomist.rug.extension"
 let class_name = "ErlangExtensionLanguage"
+let typed_inf = { package_name + "." + class_name; }
 let extlang_path = { package_dir + "/" + class_name + ".scala" }
 let test_path = { test_package_dir + "/" + class_name + "Test.scala" }
 let test_usage_path = { test_package_dir + "/" + class_name + "UsageTest.scala" }
 let grammar_path = { grammar_resource_dir + "/Erlang.g4" }
 let load_source_path = { test_resource_dir + "/LoadSource.ts" }
 let path_exp_jump_type = "ErlangExtensionLanguage"
-let package_name = "com.atomist.rug.extension"
 let file_extension = ".erl"
 let grammar_name = "Erlang"
 let grammar_production = "forms"
@@ -39,19 +41,22 @@ when
   AddRugLanguageExtensionWithANTLRInScala
 
 then
-  directoryExists package_dir
+  dumpAll
+  and directoryExists package_dir
    and fileExists extlang_path
    and fileContains extlang_path { "class " + class_name }
-   and fileContains extlang_path { "grammars = \"classpath:grammars/antlr/" + grammar_name + ".g4\"" }
-   and fileContains extlang_path { "topLevelProduction = \""+ grammar_production + "\"" }
+   and fileContains extlang_path { "\"classpath:grammars/antlr/" + grammar_name + ".g4\"" }
+   and fileContains extlang_path { "\""+ grammar_production + "\"" }
    and fileContains extlang_path { "f.name.endsWith(\""+file_extension+"\")" }
    and directoryExists test_package_dir
    and fileExists { test_package_dir + "/" + class_name + "UsageTest.scala" }
    and fileExists { test_package_dir + "/" + class_name + "Test.scala" }
    and fileContains test_path { "object "+class_name+"Test" }
    and fileContains test_path { "class "+class_name+"Test" }
-   and fileContains test_usage_path { "class "+class_name+"UsageTest extends AbstractTypeUnderFileTest" }
+   and fileContains test_usage_path { "class "+class_name+"UsageTest extends AntlrRawFileTypeTest" }
    and directoryExists grammar_resource_dir
    and fileContains grammar_path grammar_name
    and directoryExists test_resource_dir
    and fileContains load_source_path { "//"+path_exp_jump_type+"()" }
+   and fileExists typed_inf_path
+   and fileContains typed_inf_path typed_inf

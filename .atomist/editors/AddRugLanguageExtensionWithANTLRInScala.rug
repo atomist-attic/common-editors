@@ -96,10 +96,26 @@ let path_exp_jump_type = {
     return class_name;
 }
 
+let meta_inf_dir = "src/main/resources/META-INF/services"
+let typed_inf_path = { meta_inf_dir + "/com.atomist.rug.spi.Typed"; }
+let typed_inf = { package_name + "." + class_name; }
+
 with Project begin
     do merge extension_class extension_class_path
     do merge grammar_file grammar_path
     do merge test_usage_class extension_test_usage_path
     do merge unit_test_class extension_unit_test_path
     do merge load_source_editor load_source_editor_path
+end
+
+with File f when { ( f.path() == typed_inf_path ) && ( ! f.contains(typed_inf) ) }
+begin
+    do append { "\n" }
+    do append typed_inf
+end
+
+with Project p when { ! p.fileExists(typed_inf_path) } 
+begin
+    do addDirectoryAndIntermediates meta_inf_dir
+    do addFile typed_inf_path typed_inf
 end
