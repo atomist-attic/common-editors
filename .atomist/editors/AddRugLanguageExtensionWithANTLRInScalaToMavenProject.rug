@@ -60,5 +60,5 @@ param description: @any
 param rug_version: @semantic_version
 
 AddProjectDependencyToMavenPom group_id = "com.atomist", artifact_id = "rug", version = rug_version
-AddProjectDependencyToMavenPom group_id = "org.scalatest", artifact_id = "scalatest_2.11.8", version = "3.0.1"
+AddProjectDependencyToMavenPom group_id = "org.scalatest", artifact_id = "scalatest_2.11", version = "3.0.1"
 AddRugLanguageExtensionWithANTLRInScala
