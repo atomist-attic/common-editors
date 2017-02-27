@@ -20,8 +20,8 @@
 @tag "documentation"
 editor AddApacheSoftwareLicense20
 
-let license = "ApacheSoftwareLicenseV20.vm"
+let license = "ApacheSoftwareLicenseV20"
 let licenseFilename = "LICENSE"
 
 with Project
-  do merge license to licenseFilename
+  do copyEditorBackingFileOrFail license licenseFilename
