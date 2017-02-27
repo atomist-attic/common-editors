@@ -196,3 +196,16 @@ editor:
   parameters:
     - "editor_name": "AddRugLanguageExtensionWithANTLRInScalaToMavenProject"
 
+---
+kind: "operation"
+client: "rug-cli 0.24.0"
+editor:
+  name: "AddTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.11.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-editors"
+    branch: "master"
+    sha: "e9ca710*"
+
