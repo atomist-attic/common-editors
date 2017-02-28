@@ -209,3 +209,18 @@ editor:
     branch: "master"
     sha: "e9ca710*"
 
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "master"
+    sha: "6251bac*"
+  parameters:
+    - "rug_name": "AddApacheSoftwareLicense20"
+
