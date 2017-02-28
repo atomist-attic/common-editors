@@ -26,8 +26,11 @@ editor AddChangeLog
 @maxLength 100
 param repo_slug: ^[-\w.]+/[-\w.]+$
 
-let changelogTemplate = "CHANGELOG.md.mustache"
+let changelogTemplate = "empty-changelog.md"
 let changelog = "CHANGELOG.md"
 
-with Project
-  do merge changelogTemplate to changelog
+with Project begin
+  do copyEditorBackingFileOrFail changelogTemplate changelog
+  with File f when name = changelog
+    do replace "{{repo_slug}}" repo_slug
+end

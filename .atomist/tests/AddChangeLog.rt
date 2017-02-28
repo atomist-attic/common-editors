@@ -29,22 +29,6 @@ then
   fileExists changelog
 	and fileContains changelog repo_slug
 
-scenario AddChangeLog should overwrite CHANGELOG.md
-
-let changelog = "CHANGELOG.md"
-let repo_slug = "repo-owner/repo-name"
-
-given
-  ArchiveRoot
-
-when
-  AddChangeLog
-
-then
-  fileExists changelog
-	and fileContains changelog repo_slug
-    and { !result.fileContains(changelog, "common-editor") }
-
 scenario AddChangeLog should reject invalid repo_slug
 
 given
