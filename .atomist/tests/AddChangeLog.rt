@@ -16,7 +16,6 @@
 
 scenario AddChangeLog should add CHANGELOG.md
 
-let changelog = "CHANGELOG.md"
 let repo_slug = "repo-owner/repo-name"
 
 given
@@ -26,8 +25,8 @@ when
   AddChangeLog
 
 then
-  fileExists changelog
-	and fileContains changelog repo_slug
+  fileExists "CHANGELOG.md"
+	and fileContains "CHANGELOG.md" repo_slug
 
 scenario AddChangeLog should reject invalid repo_slug
 
