@@ -269,3 +269,18 @@ editor:
   parameters:
     - "rug_name": "PackageMove"
 
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "ClassRenamer"
+
