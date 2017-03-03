@@ -196,3 +196,166 @@ editor:
   parameters:
     - "editor_name": "AddRugLanguageExtensionWithANTLRInScalaToMavenProject"
 
+---
+kind: "operation"
+client: "rug-cli 0.24.0"
+editor:
+  name: "AddTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.11.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-editors"
+    branch: "master"
+    sha: "e9ca710*"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "master"
+    sha: "6251bac*"
+  parameters:
+    - "rug_name": "AddApacheSoftwareLicense20"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "AddChangeLog"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "PomParameterizer"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "PackageMove"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "ClassRenamer"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "AddProjectDependencyToMavenPom"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "AddReadme"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "RemoveCodeOfConduct"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "RemoveApacheSoftwareLicense20"
+
+---
+kind: "operation"
+client: "rug-cli 0.25.0-SNAPSHOT"
+editor:
+  name: "atomist-rugs.rug-upgrade.ConvertRugToTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-upgrade"
+  version: "0.1.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-upgrade"
+    branch: "1e67c1d722094538f928b78351a6629b997c18db"
+    sha: "1e67c1d"
+  parameters:
+    - "rug_name": "RemoveChangeLog"
+
